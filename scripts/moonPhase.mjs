@@ -61,6 +61,28 @@ function getMoonPhaseImage(phase) {
   return './images/moon_phases/moon-full-moon.svg';
 }
 
+export async function getCurrentMoonPhase(date) {
+    const apiKey = '20b799dd80d84d31baf164711253107';
+    const url = `https://api.weatherapi.com/v1/astronomy.json?key=${apiKey}&q=Orem&dt=${date}`;
+
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+
+        const moonPhase = data.astronomy.astro.moon_phase;
+
+        document.getElementById('moon-phase-result').textContent = `Moon Phase: ${moonPhase}`;
+        document.querySelector('#moon_phase h3').style.display = 'none';
+        document.querySelector('#phase-image').src = getMoonPhaseImage(moonPhase);
+
+    } catch (error) {
+        console.error('Error fetching moon data:', error);
+        document.getElementById('moon-phase').textContent = 'Failed to get moon data.';
+    }
+
+}
+
     // <!-- <script>
     //     const apiKey = '20b799dd80d84d31baf164711253107'; // Replace this with your WeatherAPI.com key
 

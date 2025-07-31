@@ -24,8 +24,41 @@ body {
     color: white;
 }
 
+header {
+    display: flex;
+    /* Arrange children in a row */
+    align-items: center;
+    /* Vertically center the items */
+    gap: 1rem;
+    /* Space between image and text */
+    justify-content: flex-start;
+    /* Align items to the left */
+    padding: 0.5rem 1rem;
+    /* Optional padding around the header */
+}
+
+header img {
+    display: block;
+    /* Remove any inline spacing issues */
+    max-height: 80px;
+    /* Adjust height to fit nicely */
+    width: auto;
+    /* Keep aspect ratio */
+}
+
+header h1 {
+    margin: 0;
+    /* Remove default margin */
+    font-size: 3rem;
+    /* Adjust font size */
+    font-weight: 700;
+    color: #fff;
+    /* Or whatever color fits your design */
+}
+
 h1 {
     font-size: 3rem;
+    color: white;
 }
 
 h1,
@@ -58,7 +91,7 @@ main {
     border: 10px solid var(--neutral);
     border-radius: 1rem;
     background-color: rgba(0, 0, 0, 2);
-    filter: drop-shadow(0 0 0.75rem white);
+    filter: drop-shadow(0 0 0.75rem var(--accent-2));
 }
 
 .card-content {
@@ -71,12 +104,24 @@ main {
 }
 
 .card-title {
+    display: flex;
+    align-items: center;
+    /* center vertically */
+    justify-content: flex-start;
+    /* align to the left horizontally */
+    gap: 10px;
     grid-column: 1 / 1;
-    justify-content: center;
     background-color: var(--neutral);
-    padding: 0;
+    padding: 0.5rem 1rem;
     margin: 0;
-    color: white;
+    color: var(--accent-1);
+    text-align: left;
+}
+
+.card-title img {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
 }
 
 .card-title h2 {
@@ -88,7 +133,7 @@ main {
     grid-column: 1 / 2;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
+    margin: .5rem;
 }
 
 #quote p {
@@ -148,9 +193,27 @@ main {
     margin: 1rem 0;
 }
 
-.lunar img {
+#phase-image {
     width: 200px;
     height: 200px;
     display: block;
     margin: 1rem 0;
+}
+
+input {
+    margin: .5rem;
+}
+
+button {
+    background-color: var(--accent-1);
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--neutral);
+    color: white;
+
 }

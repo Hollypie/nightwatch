@@ -25,14 +25,24 @@
     <div class="stars-container"></div>
     <main>
         
-        <div>
+        <header>
+            <img src="/images/stars.svg" alt="telescope logo" width="100" height="100">
             <h1>Night Watcher</h1>
-        </div>
+        </header>
 
-        <div id="quote" class="quote-box"></div>
+        <div class="card">
+            <div class="card-title">
+                <img src="/images/space-observatory.svg" alt="telescope logo" width="50" height="50">
+                <h2>Astral Insight</h2>
+            </div>
+            <div class="card-content">
+                <div id="quote" class="quote-box"></div>
+            </div>
+        </div>
 
         <div class="apod card">
             <div class="card-title">
+                <img src="/images/telescope.svg" alt="telescope logo" width="50" height="50">
                 <h2>NASA Astronomy Picture of the Day</h2>
             </div>
             <div class="card-content">
@@ -52,29 +62,42 @@
 
         <div class="lunar card">
             <div class="card-title">
+                <img src="/images/moon-dreamy.svg" alt="telescope logo" width="50" height="50">
                 <h2>Current Moon Phase</h2>
             </div>
             <div class="card-content">
-                <p>Enter the Latitude and Longitude of your location</p>
-                <p>Example: Orem, Utah 40.2969°, -111.6946°</p>
-                <p>Do not include the degree symbol</p>
-                <form id="location-form">
-                    <label for="latitude">Latitude:</label>
-                    <input type="number" id="latitude" name="latitude" step="any" min="-90" max="90" required>
-                
-                    <label for="longitude">Longitude:</label>
-                    <input type="number" id="longitude" name="longitude" step="any" min="-180" max="180" required>
-                
-                    <button type="submit">Get Moon Data</button>
-                </form>
                 <div id="moon_phase">
                     <h3>Loading Moon Phase...</h3>
                     <p id="moon-phase-result"></p>
                     <img id="phase-image" src="/images/moon_phases/moon-full-moon.svg" alt="full moon" width="200" height="200">
                     <p id="moon-rise"></p>
                     <p id="moon-set"></p>
+                    <hr>
                 </div>
-                
+                <p>Enter the Latitude and Longitude of your location</p>
+                <p>Example: Orem, Utah 40.2969°, -111.6946°</p>
+                <form id="location-form">
+                    <label for="latitude">Latitude:</label>
+                    <input type="number" id="latitude" name="latitude" step="any" min="-90" max="90" required>
+                    <br>
+                    <label for="longitude">Longitude:</label>
+                    <input type="number" id="longitude" name="longitude" step="any" min="-180" max="180" required>
+                    <br>
+                    <button type="submit">Get Local Moon Data</button>
+                </form>  
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">
+                <img src="/images/international-space-station.svg" alt="telescope logo" width="50" height="50">
+                <h2>International Space Station Tracker</h2>
+            </div>
+            <div class="card-content">
+                <p>Curious where the International Space Station is right now? Enter your latitude and longitude to find out
+                    when it will
+                    be passing over your location. The ISS orbits Earth about every 90 minutes, traveling at over 17,000 miles
+                    per hour —
+                    and it’s often visible to the naked eye!</p>
             </div>
         </div>
     </main>

@@ -2,7 +2,7 @@
 import { fetchNasaApod } from "./nasaApod.mjs";
 import { createStars, createShootingStar } from "./starrySky.mjs";
 import { renderRandomQuote } from "./quote.mjs";
-import { getMoonPhaseData } from "./moonPhase.mjs";
+import { getMoonPhaseData, getCurrentMoonPhase } from "./moonPhase.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   const dateInput = document.getElementById("apod-date");
@@ -34,9 +34,11 @@ function shootingStarLoop() {
 // Start the loop
 shootingStarLoop();
 
-// render the random quote
+// render the random quote and current moon phase
 document.addEventListener('DOMContentLoaded', () => {
   renderRandomQuote();
+  const currentDate = new Date().toISOString().slice(0, 10); 
+  getCurrentMoonPhase(currentDate);
 });
 
 document.getElementById('location-form').addEventListener('submit', async (e) => {
