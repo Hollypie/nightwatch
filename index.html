@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Night Watcher - An amatuer astronomy site</title>
+
+    <link rel="stylesheet" href="/styles/styles.css" />
+
+    <!-- Preconnect only once -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Combine multiple families in one URL -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+
+<body>
+    <div class="stars-container"></div>
+    <main>
+        
+        <div>
+            <h1>Night Watcher</h1>
+        </div>
+
+        <div id="quote" class="quote-box"></div>
+
+        <div class="apod card">
+            <div class="card-title">
+                <h2>NASA Astronomy Picture of the Day</h2>
+            </div>
+            <div class="card-content">
+                <label for="apod-date">Choose a date:</label>
+                <input type="date" id="apod-date" max="" />
+                
+                <div id="loading" style="display: none;">Loading...</div>
+                <div id="error" style="color: red;"></div>
+                
+                <h2 id="title"></h2>
+                <p id="date"></p>
+                <img id="pic" src="" alt="NASA Astronomy Picture of the Day" />
+                <p id="explanation"></p>
+            </div>
+            
+        </div>
+
+        <div class="lunar card">
+            <div class="card-title">
+                <h2>Current Moon Phase</h2>
+            </div>
+            <div class="card-content">
+                <p>Enter the Latitude and Longitude of your location</p>
+                <p>Example: Orem, Utah 40.2969°, -111.6946°</p>
+                <p>Do not include the degree symbol</p>
+                <form id="location-form">
+                    <label for="latitude">Latitude:</label>
+                    <input type="number" id="latitude" name="latitude" step="any" min="-90" max="90" required>
+                
+                    <label for="longitude">Longitude:</label>
+                    <input type="number" id="longitude" name="longitude" step="any" min="-180" max="180" required>
+                
+                    <button type="submit">Get Moon Data</button>
+                </form>
+                <div id="moon_phase">
+                    <h3>Loading Moon Phase...</h3>
+                    <p id="moon-phase-result"></p>
+                    <img id="phase-image" src="/images/moon_phases/moon-full-moon.svg" alt="full moon" width="200" height="200">
+                    <p id="moon-rise"></p>
+                    <p id="moon-set"></p>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Link to your JavaScript as an ES6 module -->
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Moonwatcher. All rights reserved.</p>
+
+    <p>
+        Data sources:
+        <br />
+        🌙 Moon phase data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo
+            API</a><br />
+        📷 Astronomy Picture of the Day from <a href="https://api.nasa.gov/" target="_blank" rel="noopener">NASA APOD
+            API</a><br />
+        🛰️ ISS location data from <a href="http://api.open-notify.org/" target="_blank" rel="noopener">Open Notify ISS
+            API</a>
+    </p>
+
+    <p>
+        Designed and developed by Holly Briggs 🌙
+    </p>
+</footer>
+
+</html>

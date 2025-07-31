@@ -1,0 +1,156 @@
+:root {
+    /* Color variables */
+    --primary-color: rgb(10, 25, 47); /* Starship Blue */
+    --accent-1: rgb(0, 255, 204); /* Nebula Teal */
+    --accent-2: rgb(178, 102, 255); /* Plasma Purple */
+    --neutral: rgb(39, 39, 39); /* Lunar Gray */
+    --highlight: rgb(255,153,51); /* Solar Flare */
+
+    /* Font variables */
+    --heading-font: 'Orbitron', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --quote-font: 'Dancing Script', fantasy;
+}
+
+html {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+}
+
+body,
+p {
+    font-family: var(--body-font);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+    align-items: center;
+}
+
+
+
+.card {
+    width: 90%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2;
+    border: 10px solid var(--neutral);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 2);
+    filter: drop-shadow(0 0 0.75rem white);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-title {
+    grid-column: 1 / 1;
+    justify-content: center;
+    background-color: var(--neutral);
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.card-title h2 {
+    padding: 1rem;
+    margin: 0;
+}
+
+.card-content {
+    grid-column: 1 / 2;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+#quote p {
+    font-family: var(--quote-font);
+    font-size: 1.5rem;
+}
+
+.stars-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.shooting-star {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 6px white);
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+
+.apod img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+.lunar img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 1rem 0;
+}
