@@ -40,21 +40,21 @@ function getMoonPhaseImage(phase) {
   // phase is a number from 0 to 1 from the API
   
   if (phase === "First Quarter") {
-    return '/images/moon_phases/first-quarter.webp';
+    return 'images/moon_phases/first-quarter.webp';
   } else if (phase === "Full Moon") {
-    return '/images/moon_phases/full-moon.webp';
+    return 'images/moon_phases/full-moon.webp';
   } else if (phase === "Last Quarter") {
-    return '/images/moon_phases/last-quarter.webp';
+    return 'images/moon_phases/last-quarter.webp';
   } else if (phase === "New Moon") {
-    return '/images/moon_phases/new-moon.webp';
+    return 'images/moon_phases/new-moon.webp';
   } else if (phase === "Waning Crescent") {
-    return '/images/moon_phases/waning-crescent.webp';
+    return 'images/moon_phases/waning-crescent.webp';
   } else if (phase === "Waning Gibbous") {
-    return '/images/moon_phases/waning-gibbous.webp';
+    return 'images/moon_phases/waning-gibbous.webp';
   } else if (phase === "Waxing Crescent") {
-    return '/images/moon_phases/waxing-crescent.webp';
+    return 'images/moon_phases/waxing-crescent.webp';
   } else if (phase === "Waxing Gibbous") {
-    return '/images/moon_phases/waxing-gibbous.webp';
+    return 'images/moon_phases/waxing-gibbous.webp';
   }
   
   // fallback image
