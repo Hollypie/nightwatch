@@ -1,9 +1,26 @@
+const starColors = [
+  'rgb(255, 160, 122)',  // soft red
+  'rgb(255, 165, 0)',    // orange
+  'rgb(255, 244, 214)',  // golden yellow
+  'rgb(245, 245, 255)',  // warm white
+  'rgb(202, 216, 255)',  // icy blue
+  'rgb(173, 216, 230)',  // light blue
+  'rgb(138, 43, 226)',   // blue violet
+  'rgb(255, 255, 255)'   // pure white
+];
+
 export function createStars(count) {
   const container = document.querySelector('.stars-container');
   for (let i = 0; i < count; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
 
+      
+    // Star color randomizer
+    const randomColor = starColors[Math.floor(Math.random() * starColors.length)];
+    star.style.backgroundColor = randomColor;
+
+      
     // Random position
     star.style.top = `${Math.random() * 100}vh`;
     star.style.left = `${Math.random() * 100}vw`;
