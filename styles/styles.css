@@ -217,3 +217,11 @@ button:hover {
     color: white;
 
 }
+
+footer {
+    padding: 2rem;
+}
+
+footer a {
+    color: yellow;
+}

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Track the International Space Station and view upcoming visible passes based on your location. Includes moon phases, starry skies, and astronomy quotes.">
     <title>Night Watcher - An amatuer astronomy site</title>
 
     <link rel="stylesheet" href="styles/styles.css" />
@@ -98,7 +100,19 @@
                     be passing over your location. The ISS orbits Earth about every 90 minutes, traveling at over 17,000 miles
                     per hour —
                     and it’s often visible to the naked eye!</p>
+                <form id="iss-form">
+                    <label for="iss-latitude">Latitude:</label>
+                    <input type="number" id="iss-latitude" step="0.01" required>
+                
+                    <label for="iss-longitude">Longitude:</label>
+                    <input type="number" id="iss-longitude" step="0.01" required>
+                
+                    <button type="submit">Get ISS Pass</button>
+                </form>
+
+                <p id="iss-result"></p>
             </div>
+            
         </div>
     </main>
 
@@ -107,8 +121,6 @@
     <script type="module" src="scripts/main.js"></script>
 </body>
 <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Moonwatcher. All rights reserved.</p>
-
     <p>
         Data sources:
         <br />
@@ -119,10 +131,9 @@
         🛰️ ISS location data from <a href="http://api.open-notify.org/" target="_blank" rel="noopener">Open Notify ISS
             API</a>
     </p>
-
-    <p>
-        Designed and developed by Holly Briggs 🌙
-    </p>
+    <p>©<span id="yearDisplay"></span> Designed and developed by Holly Briggs 🌙 Utah, USA</p>
+    <p id="lastModified"></p>
+    
 </footer>
 
 </html>
