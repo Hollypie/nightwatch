@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   dateInput.addEventListener("change", () => {
     const selectedDate = dateInput.value;
-    if (selectedDate > utcTodayStr) {
+    if (selectedDate > localTodayStr) {
       alert("APOD data is not available for future dates.");
-      dateInput.value = utcTodayStr;
+      dateInput.value = localTodayStr;
       return;
     }
     fetchNasaApod(selectedDate);
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render random quote and current moon phase
   renderRandomQuote();
-  getCurrentMoonPhase(utcTodayStr);
+  getCurrentMoonPhase(localTodayStr);
 
   // --- Restore saved moon form values ---
   const savedMoonLat = localStorage.getItem("moonLat");
